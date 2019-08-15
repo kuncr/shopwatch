@@ -1,0 +1,111 @@
+body{
+  background:#f4f4f4;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: #e74c3c;;
+}
+h1{
+	font-weight: bold;
+	color: #e74c3c;
+}
+.header{
+	padding: 10px 0;
+	background-color: #e74c3c;
+	color: white;
+}
+.header a{
+	color: white;
+	font-weight: bold;
+}
+
+#menu_header ul li{
+	float: right;
+	display: inline;
+	padding-left: 7px;
+	padding-right: 7px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+#menu_header ul li button{
+	background-color: #e74c3c;
+	color: white;
+}
+
+#form_search{
+	padding-top: 10px;
+}
+
+#form_search form input{
+	float: left;
+	width: 90%;
+}
+#form_search form button{
+	float: right;
+	background-color: #e74c3c;
+	font-weight: bold;
+}
+
+#cart{
+	padding-top: 10px;
+}
+
+#cart img{
+	float: left;
+}
+#cart ul{
+	padding-top: 13px;
+	list-style-type: none;
+}
+#cart a{
+	color: red;
+	font-weight: bold;
+}
+#cart a:hover{
+	text-decoration: none;
+	color: red;
+}
+.cart_button{
+	background-color: #e74c3c;
+	color: white;
+	font-weight: bold;
+}
+#cart form{
+	margin-top: 5px;
+}
+.nav_header{
+	background-color: #e74c3c;
+}
+#nav a{
+	color: black;
+	font-size: 130%;
+}
+#nav a:hover{
+	color: white;
+}
+
+#form_contact form{
+	padding: 20px;
+}
+
+#form_contact label{
+	color: #e74c3c;
+}
+
+h2{
+	color: #e74c3c;
+	font-weight: bold;
+}
+
+.title{
+	border-bottom: 1px solid grey;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.title-td{
+	font-size: 150%;
+	font-weight: bold;
+}
+

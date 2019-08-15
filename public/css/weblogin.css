@@ -1,0 +1,47 @@
+body{
+  background:#f4f4f4;
+}
+a{
+	text-decoration: none;
+}
+a: hover{
+	color: red;
+}
+h1{
+	font-weight: bold;
+	color: #e74c3c;
+}
+.header{
+	padding: 10px 0;
+	background-color: #e74c3c;
+	color: white;
+}
+.header a{
+	color: white;
+	font-weight: bold;
+}
+
+#menu_header ul li{
+	float: right;
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+.content{
+	margin-top: 30px;
+}
+.form_login{
+	border: 1px solid #e74c3c;
+	padding: 20px;
+}
+h2{
+	color: #e74c3c;
+	font-weight: bold;
+}
+.form_login button{
+	background-color: #e74c3c;
+	text-align: center;
+}
