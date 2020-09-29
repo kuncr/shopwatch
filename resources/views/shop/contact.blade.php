@@ -15,12 +15,12 @@
 					<input type="email" name="email" class="form-control" id="" placeholder="Vui lòng nhập email" required="required">
 					<label for="">Nội dung *</label>
 					<textarea name="content" id="inputContent" placeholder="Vui lòng nhập nội dung" class="form-control" rows="4" required="required"></textarea>
-					
+					<button type="submit" style="background-color: #e74c3c;" class="btn btn-primary">Gửi</button>
 				</div>
 			
 				
 			
-				<button type="submit" style="background-color: #e74c3c;" class="btn btn-primary">Gửi</button>
+				
 			</form>
 			</div>
 		</div>
@@ -31,9 +31,9 @@
 			</div>
 			<div class="row">
 				<h2 style="color: #e74c3c;font-weight: bold;">Liên hệ</h2><br>
-				<p>Địa chỉ:92 Quang Trung, Đà Nẵng, Việt Nam</p><br>
-				<p>Cửa hàng đồng hồ LESON</p><br>
-				<p>Phone: 0921321123</p><br>
+				<p>Địa chỉ:Lệ xuyên-Triệu Trạch-Triệu Phong-Quảng Trị</p><br>
+				<p>Cửa hàng đồng hồ chính hãng</p><br>
+				<p>Phone: 0983127775</p><br>
 			</div>
 		</div>
 	</div>

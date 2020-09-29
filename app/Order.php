@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\user;
 class Order extends Model
 {
     protected $fillable = [
@@ -12,7 +12,7 @@ class Order extends Model
 
     public function user()
     {
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('App\User','user_id');
     }
 
     public function orderdetails()

@@ -14,6 +14,8 @@ use App\ProductImage;
 use DB;
 use App\Order;
 use App\OrderDetail;
+use App\Slide;
+use App\News;
 use App\Http\Requests\OrderRequest;
 
 
@@ -29,6 +31,7 @@ class ShopController extends Controller
     {
         $listCategory = Category::all();
         $listBrand = Brand::all();
+        $slide=Slide::all();
         // //Get ID of men category
         $menCategoryID = DB::table('categories')->where('name','Đồng hồ nam')->value('id');
         $listMenProduct = Product::where('category_id',$menCategoryID)->paginate(6);
@@ -40,7 +43,7 @@ class ShopController extends Controller
         $listCoupleProduct = Product::where('category_id',$coupleCategoryID)->paginate(6);
         $content = Cart::content();
         $count = Cart::count();
-        $param = array('content'=>$content,'count'=>$count,'listCategory'=>$listCategory,'listBrand'=>$listBrand,'listMenProduct'=>$listMenProduct,'listWomenProduct'=>$listWomenProduct,'listCoupleProduct'=>$listCoupleProduct);
+        $param = array('content'=>$content,'count'=>$count,'listCategory'=>$listCategory,'listBrand'=>$listBrand,'listMenProduct'=>$listMenProduct,'listWomenProduct'=>$listWomenProduct,'listCoupleProduct'=>$listCoupleProduct,'slide'=>$slide);
 
         if(\Auth::check())
         {
@@ -68,8 +71,8 @@ class ShopController extends Controller
     {
         $data = ['name'=>$Request->name,'email'=>$Request->email,'content'=>$Request->content];
         Mail::send('shop.email',$data,function($msg){
-            $msg->from('kull18tuoi@gmail.com','SHOPWATCH');
-            $msg->to('kull18tuoi@gmail.com','le son')->subject('SHOPWATCH-CONTACT');
+            $msg->from('nhatquangiuse@gmail.com','SHOPWATCH');
+            $msg->to('nhatquangiuse@gmail.com','Nhatquan')->subject('SHOPWATCH-CONTACT');
         });
         echo "<script>
             alert('Cám ơn bạn đã góp ý. Chúng tôi sẽ liên lạc trong thời gian sớm nhất');
@@ -108,6 +111,7 @@ class ShopController extends Controller
     {
         Cart::remove($id);
         return redirect()->route('show-cart');
+
     }
     public function updateCart(Request $Request)
     {
@@ -145,6 +149,8 @@ class ShopController extends Controller
     }
     public function storeOrder(OrderRequest $Request)
     {
+
+       
         $content = Cart::content();
         $order =  new Order();
         $order->tel = $Request->tel;
@@ -152,6 +158,7 @@ class ShopController extends Controller
         $order->user_id = Auth::user()->id;
         $order->confirm = 0;
         $order->save();
+        // dd($content);
         foreach($content as $item)
         {
             $order_detail = new OrderDetail();
@@ -159,9 +166,14 @@ class ShopController extends Controller
             $order_detail->order_id = $order->id;
             $order_detail->product_id = $item->id;
             $order_detail->save();
+        
             $productDetail = ProductDetail::where('product_id',$item->id)->first();
+            // dd($productDetail->amount);
             $productDetail->amount = $productDetail->amount-$item->qty;
+            // $productDetail->amount = 3;
+
             $productDetail->save();
+            
         }
         Cart::destroy();
         echo "<script>
@@ -170,7 +182,6 @@ class ShopController extends Controller
             echo route('shop');
             echo "'
              </script>";
-
     }
     public function listProductByCategory($id)
     {
@@ -225,5 +236,24 @@ class ShopController extends Controller
         $data = DB::table('products')->where('name','LIKE',$search_value)->get();
         $query = $request->search_value;
         return view('shop.search',compact('query','data','param'));
+    }
+    public function news(){
+        $slide=Slide::all();
+        //print_r($slide);
+        //exit;
+        $tintuc=News::all();
+        $listCategory = Category::all();
+        $listBrand = Brand::all();
+        $content = Cart::content();
+        $count = Cart::count();
+        $total = Cart::total();
+        
+        $param = array('content'=>$content,'count'=>$count,'total'=>$total,'listCategory'=>$listCategory,'listBrand'=>$listBrand,'slide'=>$slide,'tintuc'=>$tintuc);
+        if(\Auth::check())
+        {
+            $user = Auth::user();
+            return view('shop.news',compact('param','user'));
+        }
+        return view('shop.news',compact('param'));
     }
 }

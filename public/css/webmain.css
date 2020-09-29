@@ -1,5 +1,5 @@
 body{
-  background:#f4f4f4;
+  background:white !important;
 }
 a{
 	text-decoration: none;
@@ -35,14 +35,17 @@ h1{
 }
 
 #form_search{
-	padding-top: 10px;
+	padding-top: 5px;
+	float: right;
+	padding-left: 50px;
 }
 
 #form_search form input{
 	float: left;
-	width: 90%;
+	width: 79%;
 }
 #form_search form button{
+	padding-left: 5px;
 	float: right;
 	background-color: #e74c3c;
 	font-weight: bold;
@@ -54,6 +57,7 @@ h1{
 
 #cart img{
 	float: left;
+	
 }
 #cart ul{
 	padding-top: 13px;
@@ -107,5 +111,29 @@ h2{
 .title-td{
 	font-size: 150%;
 	font-weight: bold;
+}
+.form-group{
+	padding-top: 2px;
+	float: right;
+	padding-bottom: 5px !important;
+}
+.logo{
+	padding-top: 25px;
+}
+#cart{
+	padding-top: 54px;
+}
+.baner{
+	padding-left: 38px;
+	text-align: center;
+}
+.middware{
+	background: wheat;
+}
+.btn{
+	padding-top: 10px !important;
+}
+.navbar-nav>li>a {
+	padding-top: 21px !important;
 }
 

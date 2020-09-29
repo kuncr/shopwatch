@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ShopController@index')->name('shop');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/contact','ShopController@contact')->name('contact');
 Route::post('/postContact','ShopController@postContact')->name('post-contact');
 Route::get('addCart/{id}','ShopController@addCart')->name('add-cart');
@@ -26,6 +26,7 @@ Route::get('/categories/{id}/products','ShopController@listProductByCategory')->
 Route::get('brands/{id}/products','ShopController@listProductByBrand')->name('search-product-by-brand');
 Route::post('/product/autocomplete','ShopController@fetch')->name('autocomplete');
 Route::post('/search','ShopController@search')->name('search-product');
+Route::get('news','ShopController@news')->name('news');
 
 
 Route::group(['prefix'	=> 'categories','middleware' => 'isAdmin'], function(){
@@ -73,7 +74,5 @@ Route::group(['prefix'	=>	'orders','middleware' => 'isAdmin'],function(){
 	Route::delete('/{id}','OrderController@destroy')->name('delete-order');
 	Route::get('getDetails/{id}','OrderController@getDetails')->name('get-detail');
 });
-
-
-Auth::routes();
+Auth::routes(['verify' => true]);
 

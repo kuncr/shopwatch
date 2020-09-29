@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Đồng hồ lesonwatch</title>
+        <title>NhatQuanshop-uy tín-chất lượng-nhanh chống</title>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{asset('bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
@@ -12,16 +12,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+        <!--[if lt IE 9]>-->
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+            
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+
+    <!-- Bootstrap CSS 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    -->
     </head>
     <body>
-        <div class="header">
+         <div class="header">
             <div class="container" id="menu_header">
                 <div class="col-md-6">
-                    Telephone: 0943434334
+                    Telephone: 0983127775
                 </div>
                 <div class="col-md-2">
                     
@@ -49,10 +55,19 @@
                 </div>
         </div>
         <div class="container">
-            <div class="col-md-3">
-                <h1>LESON</h1>
+        <div class="middware">
+
+            <div class="col-md-2">
+                <div class="logo">
+                    <!--<a href="{{ route('shop') }}" id="logo">-->
+                    <!--<img src="image_web/logo1.png" width="200px" alt=""></a>-->
+                    <a href="{{ route('shop') }}"><img src="/image_web/LOGO.jpg" height="100px"></a>
+                </div>
+              <!--<h1><a href="{{ route('shop') }}">NHATQUAN </a></h1>-->
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
+                    <img class="baner" src="/image_web/baner.jpg" height="150px" weight="100%">
+            <!--
                 <div class="row" id="form_search">
                     <form action="{{route('search-product')}}" method="POST" role="form">
                    
@@ -67,7 +82,8 @@
                 </div>
                 <div id="productList" style="position: absolute;"></div>
             </div>
-            <div class="col-md-1">
+            
+            <div class="col-md-1">-->
                 
             </div>
             <div class="col-md-2">
@@ -100,6 +116,8 @@
                 </div>
             </div>
         </div>
+        </div>
+
         <nav class="navbar navbar-inverse" id="nav">
           <div class="container-fluid, nav_header">
             <div class="navbar-header">
@@ -126,13 +144,40 @@
                     @endforeach()
                 </ul>
               </li>
+              <li class="active, nav_header"><a href="{{route('news')}}">TIN TỨC</a></li>
               <li class="active, nav_header"><a href="{{route('contact')}}">LIÊN HỆ</a></li>
+              <div class="row" id="form_search">
+                    <form action="{{route('search-product')}}" method="POST" role="form">
+                   
+                    <div class="form-group">
+                        
+                        <input type="text" name="search_value" class="form-control" id="product_name" placeholder="Nhập tên sản phẩm cần tìm" autocomplete="off">
+                        <button type="submit" class="btn btn-info">Tìm</button>
+                    </div>
+                    @csrf
+                </form>
+                
+                </div>
+                <div id="productList" style="position: absolute;"></div>
+                
+              <!--<div class="row" id="form_search">
+                    <form action="{{route('search-product')}}" method="POST" role="form">
+              <li class="form-group">
+                        
+                        <input type="text" name="search_value" class="form-control" id="product_name" placeholder="Nhập tên sản phẩm cần tìm" autocomplete="off">
+                        
+                    </li>
+                    <li class="btn">
+                    <button type="submit" class="btn btn-primary">Tìm</button>
+                    </li>-->
+                    
             
             </ul>
+            
             </div>
           </div>
         </nav>
-
+           
         <div class="row">
             <div class="container">
                 @yield('content')
@@ -190,6 +235,9 @@
         <!-- Bootstrap JavaScript -->
         <script src="{{asset('bootstrap-3.1.1-dist/js/bootstrap.min.js')}}"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-         
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
+       
     </body>
 </html>

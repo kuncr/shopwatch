@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -51,10 +51,21 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed','max:60'],
         ]);
-        
     }
+        public function messages()
+    {
+        return [
+            'name.required' =>  'Vui lòng nhập tên',
+            'name.string'   =>  'Vui lòng nhập tên của bạn',
+            'name.max'      =>  'Tối đa 255 kí tự',
+            'image.required'    =>  'Vui lòng chọn ảnh',
+            'image.image'       =>  'Vui lòng chọn ảnh',
+            'description.required'  =>  'Vui lòng nhập mô tả'
+        ];
+    }
+        
 
     /**
      * Create a new user instance after a valid registration.
@@ -70,5 +81,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role_id' => 2
         ]);
+        return redirect()->back()->with(['thanhcong'=>'Đăng ký tài khoản thành công']);
     }
 }

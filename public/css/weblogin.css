@@ -36,12 +36,28 @@ h1{
 .form_login{
 	border: 1px solid #e74c3c;
 	padding: 20px;
+	background:url(/image_web/1.jpg);
 }
 h2{
-	color: #e74c3c;
+	color: white;
 	font-weight: bold;
 }
 .form_login button{
-	background-color: #e74c3c;
+	background-color: #14c352;
 	text-align: center;
+}
+label{
+	color: white !important;
+}
+.btn-link{
+	color: white;
+}
+.card-header{
+	text-align: center;
+}
+h4{
+	color: white;
+}
+.link{
+	color: white;
 }

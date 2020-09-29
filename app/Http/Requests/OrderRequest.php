@@ -32,7 +32,7 @@ class OrderRequest extends FormRequest
     {
         return [
             'tel.required'    =>  'Không để trống',
-            'tel.regex'       =>  'Vui lòng nhập số điện thoại',
+            'tel.regex'       =>  'Vui lòng nhập đúng số điện thoại',
             'address.required'  =>  'Không để trống'
         ];
     }

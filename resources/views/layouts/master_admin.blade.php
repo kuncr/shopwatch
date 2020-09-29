@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Đồng hồ lesonwatch</title>
+    <title>Đồng hồ chính hãng</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/webadmin.css')}}">

@@ -1,5 +1,4 @@
 @extends('layouts.master_login')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -27,7 +26,7 @@
                         <div class="form-group row">
                             
                             <br>
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail*') }}</label>
                                 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -41,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mật khẩu') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mật khẩu*') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -62,6 +61,11 @@
                                     <label class="form-check-label" for="remember">
                                         {{ __('Nhớ mật khẩu') }}
                                     </label>
+                                    @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Quên mật khẩu?') }}
+                                    </a>
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -71,9 +75,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Đăng nhập') }}
                                 </button>
-
-                               
-                            </div>
+                                <a href="{{ route('shop') }}" class="btn btn-danger" role="button">Hủy</a>
+                            </div>  
                         </div>
                     </form>
                 </div>

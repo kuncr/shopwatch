@@ -85,7 +85,10 @@ sub {
 }
 img {
   border: 0;
+  animation: phongto 10s forwards;
+	position: relative;
 }
+
 svg:not(:root) {
   overflow: hidden;
 }

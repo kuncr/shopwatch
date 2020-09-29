@@ -20,13 +20,15 @@
                         <div class="col-md-10"></div>
                         <div class="col-md-2"><a href="{{route('list-product')}}"><button class="btn-default">Đóng</button></a></div>
                         <br>
-                        <h3>Chất liệu:{{$productDetail->material}}</h3>; <br>
-                        <h3>Vỏ:{{$productDetail->case}}</h3> <br>
-                        <h3>Dây:{{$productDetail->strap}}</h3> <br>
-                        <h3>Chống nước:{{$productDetail->water_resistance}}</h3> <br>
-                        <h3>Số lượng còn lại:{{$productDetail->amount}}</h3> <br>
+                        @if(empty($productDetail))
+                        <h3>Chất liệu:{{$productDetail->material ?? ""}}</h3>; <br>
+                        <h3>Vỏ:{{$productDetail->case ?? ""}}</h3> <br>
+                        <h3>Dây:{{$productDetail->strap ?? ""}}</h3> <br>
+                        <h3>Chống nước:{{$productDetail->water_resistance ?? ""}}</h3> <br>
+                        <h3>Số lượng còn lại:{{$productDetail->amount ?? ""}}</h3> <br>
                         <h3>Mô tả:</h3><br>
                         <h3>{{$productDetail->description}}</h3>
+				@endif
                         
                         <br>
                         @foreach($listImage as $image)

@@ -88,8 +88,7 @@ a:hover {
 }
 .img {
 	max-width: 100%;
-	transition: all 0.3s ease-out 0s;
-}
+  }
 .img-full {
 		width: 100%;
 		overflow: hidden;

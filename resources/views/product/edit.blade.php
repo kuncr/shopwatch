@@ -39,7 +39,7 @@
              				<img src="/image_product/{{$product->image}}" width="70px" alt="{{$product->image}}">
                                     <br>
              				<label for="">Hình ảnh</label>
-             				<input type="file" name="fimage" class="form-control"}}" 
+             				<input type="file" name="fimage" class="form-control" 
              				 value="{{$product->image}}">
              				
              				 

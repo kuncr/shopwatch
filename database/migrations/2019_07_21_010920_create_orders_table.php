@@ -17,7 +17,8 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string('tel');
             $table->string('address');
-            $table->integer('user_id');
+            /**$table->integer('user_id');*/
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('confirm');
             $table->timestamps();
         });

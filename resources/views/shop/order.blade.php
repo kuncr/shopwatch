@@ -31,9 +31,9 @@
 			</div>
 			<div class="row">
 				<h2 style="color: #e74c3c;font-weight: bold;">Thông tin</h2><br>
-				<p>Địa chỉ:92 Quang Trung, Đà Nẵng, Việt Nam</p><br>
-				<p>Cửa hàng đồng hồ LESON</p><br>
-				<p>Phone: 0921321123</p><br>
+				<p>Địa chỉ:Lệ xuyên, Quảng trị, Việt Nam</p><br>
+				<p>Cửa hàng đồng hồ NHATQUAN</p><br>
+				<p>Phone: 0983127775</p><br>
 			</div>
 		</div>
 	</div>
